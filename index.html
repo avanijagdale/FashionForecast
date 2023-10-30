@@ -1,25 +1,148 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Weather</title>
-        <link rel="stylesheet" href = "style.css"> 
-    </head>
-    <body>
-      <div id="main">
-          <h1>Weather App</h1>
 
-          <input type = "text" id="input" placeholder = "Enter city . . ."'>
-          <button id = "search" onclick="getWeather()">SEARCH</button>
+<head>
+    <title>Fashion Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #ff1f6d;
+            overflow: hidden;
+        }
 
-      <div id="result">
-          <h5>Results</h5>
-          <h6><div id="description">description</div>
-          <div id="temp">temp</div>
-          <div id="pressure">pressure</div>
-          <div id="humidity">humidity</div></h6>
-          
-      </div>
-    </body>
+        .navitem {
+            float: left;
+        }
 
-  <script src= "script.js"></script>
+        .navitem a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            background-color: #ff1770;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        body {
+            background-color: #ffcce6;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #ff1f6d;
+            overflow: hidden;
+        }
+
+        .navitem {
+            float: left;
+        }
+
+        .navitem a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            background-color: #ff1770;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .compliments {
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-size: 15px;
+            position: relative;
+            margin-top: 5px;
+            box-shadow: 0 0 10px rgba(249, 53, 128, 0.5),
+                0 0 15px rgba(249, 134, 178, 0.6),
+                0 0 10px rgba(255, 204, 230, 0.7);
+            background-color: #f03582;
+        }
+
+        .words {
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            font-family: monospace, monaco;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #ff1f6d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff1770;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+        <li class="navitem">
+            <a href="index.html" class="logo">
+                <img src="logobox.png" alt="Logo">
+            </a>
+        </li>
+        <li class="navitem"><a href="index.html">Fashion Forecast</a></li>
+        <li class="navitem"><a href="inputclothing.html">Wardrobe Upload</a></li>
+        <li class="navitem"><a href="output.html">View Outfit</a></li>
+        <li class="navitem"><a href="closet.html">My Closet</a></li>
+    </ul>
+
+    <div class="compliments">
+        <marquee>
+            <div class="words">Your smile is contagious. On a scale of 1 to 10, you’re an 11. You light up the room. If you were a box of crayons, you’d be the gigantic branded variety with the built-in sharpener. You have a great sense of humor. You're like sunshine on a rainy day. You're a candle in the darkness. You're someone's reason to smile. You're more fun than bubble wrap. Is that your picture next to "charming" in the dictionary? You have the courage of your convictions. You could survive a zombie apocalypse. You’re more fun than a pool filled with colorful balls and candy. </div>
+        </marquee>
+    </div>
+
+    <div id="main">
+        <input type="text" id="input" placeholder="Enter city . . .">
+        <button id="search" onclick="getWeather()">SEARCH</button>
+
+        <div id="result">
+            <h5>Results</h5>
+            <h6>
+                <div id="description">description</div>
+                <div id="temp">temp</div>
+            </h6>
+        </div>
+</body>
+
+<script src="script.js"></script>
 </html>

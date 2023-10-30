@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #ff1f6d;
+            overflow: hidden;
+        }
+
+        .navitem {
+            float: left;
+        }
+
+        .navitem a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px; /* Adjusted padding for the same size */
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            background-color: #ff1770;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .outfit {
+            flex-direction: column;
+            background: peachpuff;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #ff1770;
+        }
+    </style>
+</head>
+<body style="background-color: #ffcce6">
+    <ul class="navbar">
+        <li class="navitem">
+            <a href="index.html" class="logo">
+                <img src="logobox.png" alt="Logo">
+            </a>
+        </li>
+        <li class="navitem">
+            <a href="index.html">Fashion Forecast</a>
+        </li>
+        <li class="navitem">
+            <a href="inputclothing.html">Wardrobe Upload</a>
+        </li>
+        <li class "navitem">
+            <a href="output.html">View Outfit</a>
+        </li>
+        <li class="navitem">
+            <a href="closet.html">My Closet</a>
+        </li>
+    </ul>
+
+    <div id="title">
+        <h2>Outfit</h2>
+    </div>
+
+    <button id="fit1" style="background-color: #ff1770;" onclick="generateOutfit()">Create a Sportswear fit</button>
+    <button id="fit1" style="background-color: #ff1770;">Create a Loungewear fit</button>
+    <button id="fit1" style="background-color: #ff1770;">Create a Fancy fit</button>
+    <button id="fit1" style="background-color: #ff1770;">Create a Business casual fit</button>
+    <button id="fit1" style="background-color: #ff1770;">Create a Business formal fit</button>
+
+    <button id="fit" style="background-color: green;">Create a Random fit</button>
+
+    <div id="outfit" style="display: block">
+        <img src="body.jpeg">
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

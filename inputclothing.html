@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href = "style.css"> 
+    <style>
+        
+        .navitem {
+            float: left;
+        }
+
+        .navitem a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            background-color: #ff1770;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #ff0766;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff0766;
+        }
+    </style>
+</head>
+<body style = "background-color:#ffcce6">
+    <ul class="navbar">
+        <li class="navitem">
+          <a href="index.html" class="logo">
+              <img src="logobox.png" alt="Logo">
+          </a>
+        </li>
+        <a href="index.html"><label for="FashionForecast">Fashion Forecast</label></a>
+        <a href="inputclothing.html">Wardrobe Upload</a>
+        <a href="output.html">View Outfit</a>
+        <a href="closet.html">My Closet</a>
+    </ul>
+    
+    <div class="container">
+        <h2>Add a Clothing Item</h2>
+        <form action="process_clothing.php" method="post">
+            <div class="form-group" style="margin-right: 5%">
+                <label for="item_name">Item Name:</label>
+                <input type="text" id="item_name" name="item_name" required >
+            </div>
+            <div class="form-group">
+                <label for="item_type">Item Type:</label>
+                <select id="item_type" name="item_type" required >
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="accessory">Accessory</option>
+                    <option value="one-piece">One-Piece</option> 
+                </select>
+            </div>
+    
+            <div class="form-group" id="sub-question">
+                <!-- This div will be populated with sub-questions based on the item type selection. -->
+            </div>
+    
+            <script>
+                // Get a reference to the item_type select element.
+                const itemTypeSelect = document.getElementById("item_type");
+    
+                // Function to create sub-questions based on the selected item type.
+                function createSubQuestions() {
+                    const selectedItemType = itemTypeSelect.value;
+                    const subQuestionDiv = document.getElementById("sub-question");
+                    subQuestionDiv.innerHTML = ""; // Clear previous sub-questions.
+    
+                    if (selectedItemType === "top") {
+                        // Create sub-questions for tops.
+                        const subQuestionLabel = document.createElement("label");
+                        subQuestionLabel.setAttribute("for", "top_type");
+                        subQuestionLabel.textContent = "Type of top:";
+                        subQuestionDiv.appendChild(subQuestionLabel);
+    
+                        const subQuestionSelect = document.createElement("select");
+                        subQuestionSelect.setAttribute("id", "top_type");
+                        subQuestionSelect.setAttribute("name", "top_type");
+                        // Add options for different types of tops.
+                        const topTypes = ["T-Shirt", "Sweatshirt", "Longsleeve Shirt", "Hoodie", "Blouse", "Tank Top"];
+                        for (const type of topTypes) {
+                            const option = document.createElement("option");
+                            option.setAttribute("value", type.toLowerCase());
+                            option.textContent = type;
+                            subQuestionSelect.appendChild(option);
+                        }
+                        subQuestionDiv.appendChild(subQuestionSelect);
+                    } else if (selectedItemType === "bottom") {
+                        // Create sub-questions for bottoms.
+                        const subQuestionLabel = document.createElement("label");
+                        subQuestionLabel.setAttribute("for", "bottom_type");
+                        subQuestionLabel.textContent = "Type of bottom:";
+                        subQuestionDiv.appendChild(subQuestionLabel);
+    
+                        const subQuestionSelect = document.createElement("select");
+                        subQuestionSelect.setAttribute("id", "bottom_type");
+                        subQuestionSelect.setAttribute("name", "bottom_type");
+                        // Add options for different types of bottoms.
+                        const bottomTypes = ["Jeans", "Sweatpants", "Leggings", "Skirt", "Joggers"];
+                        for (const type of bottomTypes) {
+                            const option = document.createElement("option");
+                            option.setAttribute("value", type.toLowerCase());
+                            option.textContent = type;
+                            subQuestionSelect.appendChild(option);
+                        }
+                        subQuestionDiv.appendChild(subQuestionSelect);
+                    } else if (selectedItemType === "shoes") {
+                        // Create sub-questions for shoes.
+                        const subQuestionLabel = document.createElement("label");
+                        subQuestionLabel.setAttribute("for", "shoe_type");
+                        subQuestionLabel.textContent = "Type of shoes:";
+                        subQuestionDiv.appendChild(subQuestionLabel);
+    
+                        const subQuestionSelect = document.createElement("select");
+                        subQuestionSelect.setAttribute("id", "shoe_type");
+                        subQuestionSelect.setAttribute("name", "shoe_type");
+                        // Add options for different types of shoes.
+                        const shoeTypes = ["Sneakers", "Boots", "Sandals", "Heels", "Flats"];
+                        for (const type of shoeTypes) {
+                            const option = document.createElement("option");
+                            option.setAttribute("value", type.toLowerCase());
+                            option.textContent = type;
+                            subQuestionSelect.appendChild(option);
+                        }
+                        subQuestionDiv.appendChild(subQuestionSelect);
+                    } else if (selectedItemType === "accessory") {
+                        // Create sub-questions for accessories.
+                        const subQuestionLabel = document.createElement("label");
+                        subQuestionLabel.setAttribute("for", "accessory_type");
+                        subQuestionLabel.textContent = "Type of accessory:";
+                        subQuestionDiv.appendChild(subQuestionLabel);
+    
+                        const subQuestionSelect = document.createElement("select");
+                        subQuestionSelect.setAttribute("id", "accessory_type");
+                        subQuestionSelect.setAttribute("name", "accessory_type");
+                        // Add options for different types of accessories.
+                        const accessoryTypes = ["Jewelry", "Hat", "Sunglasses", "Umbrella", "Scarf"];
+                        for (const type of accessoryTypes) {
+                            const option = document.createElement("option");
+                            option.setAttribute("value", type.toLowerCase());
+                            option.textContent = type;
+                            subQuestionSelect.appendChild(option);
+                        }
+                        subQuestionDiv.appendChild(subQuestionSelect);
+                    } else if (selectedItemType === "one-piece") {
+                        // Create sub-questions for one-pieces.
+                        const subQuestionLabel = document.createElement("label");
+                        subQuestionLabel.setAttribute("for", "one_piece_type");
+                        subQuestionLabel.textContent = "Type of one-piece:";
+                        subQuestionDiv.appendChild(subQuestionLabel);
+    
+                        const subQuestionSelect = document.createElement("select");
+                        subQuestionSelect.setAttribute("id", "one_piece_type");
+                        subQuestionSelect.setAttribute("name", "one_piece_type");
+                        // Add options for different types of one-pieces.
+                        const onePieceTypes = ["Dresses", "Rompers", "Swimsuit"]; // Added one-piece sub-categories
+                        for (const type of onePieceTypes) {
+                            const option = document.createElement("option");
+                            option.setAttribute("value", type.toLowerCase());
+                            option.textContent = type;
+                            subQuestionSelect.appendChild(option);
+                        }
+                        subQuestionDiv.appendChild(subQuestionSelect);
+                    }
+                }
+    
+                // Add an event listener to the item_type select element to trigger the sub-question creation.
+                itemTypeSelect.addEventListener("change", createSubQuestions);
+    
+                // Call the function once to initialize the sub-questions based on the default selection.
+                createSubQuestions();
+            </script>
+    
+            <div class="form-group">
+                <label for="item_category">Item Category:</label>
+                <select id="item_category" name="item_category" required>
+                    <option value="sportswear">Sportswear</option>
+                    <option value="loungewear">Loungewear</option>
+                    <option value="fancy">Fancy</option>
+                    <option value="business formal">Business formal</option>
+                    <option value="business casual">Business casual</option>
+                </select>
+            </div>
+        </form>
+    </div>
+        
+<!-- File Upload Section -->
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff1770;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .custom-button:hover {
+            background-color: #ec77a4;
+        }
+        .isDisabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+    <div class="container">
+        <form action="/action_page.php" class="file-upload">
+            <label for="myFile" class="custom-button">
+                Upload a File
+                <input type="file" id="myFile" name="filename" style="display: none;">
+            </label>
+            <div class="form-group" style = "color: white;">
+                <button class="custom-button btn btn-primary" value ="Submit"> <a href="closet.html"> Submit </a></button>
+            </div>
+        </form>
+    </div>
+</html>
+
+
+    </form>
+</div>
+</body>
+</html>

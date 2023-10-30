@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        body {
+            background-color: #ffcce6;
+            margin: 0;
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #ff1f6d;
+            overflow: hidden;
+        }
+
+        .navitem {
+            float: left;
+        }
+
+        .navitem a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navitem a:hover {
+            background-color: #ff1770;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            text-align: center;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-placeholder {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            max-height: 200px;
+        }
+
+        .text{
+            font-size: 14px;
+            font-family: "monospace", monaco;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <li class="navitem">
+            <a href="index.html" class="logo">
+                <img src="logobox.png" alt="Logo">
+            </a>
+        </li>
+        <li class="navitem"><a href="index.html">Fashion Forecast</a></li>
+        <li class="navitem"><a href="inputclothing.html">Wardrobe Upload</a></li>
+        <li class="navitem"><a href="output.html">View Outfit</a></li>
+        <li class="navitem"><a href="closet.html">My Closet</a></li>
+    </ul>
+
+    <div class="grid-container">
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="shirt1.png" alt="My Favorite Black Blouse">
+            </div>
+            <div class="text">
+                <h1>Item Name: My Favorite Black Blouse</h1>
+                <p1> Item Type: Shirt</p1>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="pinkHoodie.jpeg" alt="My Pink Hoodie">
+            </div>
+            <div class="text">
+                <h1>Item Name: My Pink Hoodie</h1>
+                <p1> Item Type: Hoodie</p1>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="blueshirt.webp" alt="Blue Longsleeve Shirt">
+            </div>
+            <div class="text">
+                <h1>Item Name: Blue Longsleeve Shirt</h1>
+                <p1>Item Type: Shirt</p1>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="shirt1.png" alt="My Favorite Black Blouse">
+            </div>
+            <div class="text">
+                <h1>Item Name: My Favorite Black Blouse</h1>
+                <p1> Item Type: Shirt</p1>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="pinkHoodie.jpeg" alt="My Pink Hoodie">
+            </div>
+            <div class="text">
+                <h1>Item Name: My Pink Hoodie</h1>
+                <p1> Item Type: Hoodie</p1>
+            </div>
+        </div>
+        <div class="box">
+            <div class="image-placeholder">
+                <img src="blueshirt.webp" alt="Blue Longsleeve Shirt">
+            </div>
+            <div class="text">
+                <h1>Item Name: Blue Longsleeve Shirt</h1>
+                <p1>Item Type: Shirt</p1>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
